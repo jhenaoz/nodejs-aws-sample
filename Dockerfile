@@ -7,5 +7,4 @@ RUN npm install --unsafe-perm --quiet --no-progress --production
 #TARGET: Build, expose port and start command.
 FROM base AS build
 EXPOSE 3000
-RUN ls -la
 CMD [ "node", "app.js" ]
