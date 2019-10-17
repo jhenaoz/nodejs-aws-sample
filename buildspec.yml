@@ -27,11 +27,14 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-#artifacts:
-  #files:
-    # - location
-    # - location
-  #name: $(date +%Y-%m-%d)
+      - echo Generating Docker run file with current tag for deployment...
+      - sed -i -e 's|TAG_NAME|'$TAG_NAME'|g' Dockerrun.aws.json
+      - echo 'Generated Dockerrun.aws.json file:'
+      - cat Dockerrun.aws.json
+artifacts:
+  files:
+    - Dockerrun.aws.json
+  name: $(date +%Y-%m-%d)
   #discard-paths: yes
   #base-directory: location
 #cache:
