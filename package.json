@@ -1,11 +1,15 @@
 {
   "name": "nodejs-aws-sample",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample Hello world project in nodejs to explain deployment in cloud services such AWS or GCP",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/jhenaoz/nodejs-aws-sample.git"
   },
   "author": "",
   "license": "ISC",
